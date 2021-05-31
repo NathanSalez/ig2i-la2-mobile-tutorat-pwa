@@ -15,6 +15,8 @@ ng serve
 1. Déployer le site sur Github Pages.
 2. Implémenter la PWA !
 
+## Ce à quoi votre application doit ressembler :
+* https://nathansalez.github.io/personalDiaryFront/
 
 ## Quelques pistes pour réaliser vos objectifs
 * https://angular.io/guide/deployment#deploy-to-github-pages
