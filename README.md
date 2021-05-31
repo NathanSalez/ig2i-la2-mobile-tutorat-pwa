@@ -12,5 +12,10 @@ ng serve
 ```
 
 ## Vos objectifs
-1. Déployer le site sur Github Docs.
+1. Déployer le site sur Github Pages.
 2. Implémenter la PWA !
+
+
+## Quelques pistes pour réaliser vos objectifs
+* https://angular.io/guide/deployment#deploy-to-github-pages
+* https://angular.io/guide/service-worker-getting-started
