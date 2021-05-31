@@ -1,0 +1,9 @@
+<mat-list>
+  <mat-card *ngFor="let field of diary.fields">
+    <div><h2>{{field.title}}</h2></div>
+    <input matInput [(ngModel)]="field.content" type="email" class="example-right-align">
+  </mat-card>
+</mat-list>
+<button aria-label="Example icon button with a plus one icon">
+  Enregistrer
+</button>

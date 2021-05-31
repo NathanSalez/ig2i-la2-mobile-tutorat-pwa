@@ -1,0 +1,20 @@
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-container button + .mat-form-field {
+  margin-left: 8px;
+}
+
+.form-container {
+  margin-left: 8px;
+}
+
+mat-form-field {
+  margin-top: 8px;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

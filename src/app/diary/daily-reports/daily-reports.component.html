@@ -1,0 +1,70 @@
+<div class="h-100">
+  <div>
+    <h1>Rapports journaliers</h1>
+    <button
+      routerLink="/diary/create"
+      mat-mini-fab
+      color="primary"
+      aria-label="Example icon button with a plus one icon"
+    >
+      <mat-icon>plus_one</mat-icon>
+    </button>
+  </div>
+
+  <div class="h-100">
+    <div class="h-100 tile-parent" *ngIf="isLoaded">
+      <div
+        *ngFor="let dailyReport of dailyReportsViews | keyvalue"
+        [ngClass]="{ dayTile: canDisplayBorder(dailyReport.key) }"
+        class="h-100 w-100 tile-content"
+      >
+        <div class="w-100 text-center">
+          <span>{{ getDayAsString(dailyReport.key) }}</span>
+        </div>
+        <div class="w-100 text-center">
+          <span>
+            {{
+              getDayFromDate(getViewFromMap(dailyReport.value).date)
+                | number: "2.0"
+            }}-
+            {{
+              getMonthFromDate(getViewFromMap(dailyReport.value).date)
+                | number: "2.0"
+            }}-
+            {{ getYearFromDate(getViewFromMap(dailyReport.value).date) }}
+          </span>
+        </div>
+        <mat-divider class="w-100"></mat-divider>
+
+        <div class="text-center h-100 desc-tile">
+          <div
+            class="text-center h-100 w-100 desc-tile hoverpointer"
+            *ngIf="
+              getViewFromMap(dailyReport.value).fieldsMap != null;
+              else displayCreateButton
+            "
+            (click)="editReport()"
+          >
+            <mat-list role="list">
+              <mat-list-item
+                role="listitem"
+                *ngFor="
+                  let fieldEntry of getViewFromMap(dailyReport.value).fieldsMap
+                    | keyvalue
+                "
+              >
+                {{ getEntryViewFromMap(fieldEntry.value).name }}:
+                {{ getEntryViewFromMap(fieldEntry.value).value }}
+                {{ getEntryViewFromMap(fieldEntry.value).unit }}
+              </mat-list-item>
+            </mat-list>
+          </div>
+
+          <ng-template #displayCreateButton>
+            <input value="Créer le rapport" (click)="editReport()" />
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

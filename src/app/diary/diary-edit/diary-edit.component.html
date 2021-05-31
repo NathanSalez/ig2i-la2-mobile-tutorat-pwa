@@ -1,0 +1,63 @@
+<div class="form-container">
+
+  <p>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Titre du Journal</mat-label>
+      <input matInput placeholder="" [ngModel]="diary.title">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Objectif du journal</mat-label>
+      <input matInput placeholder="" [ngModel]="diary.goal">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Date limite de l'objectif</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <div class="example-container" *ngFor="let field of diary.fields; let i = index">
+
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon" (click)="removeField(i)">
+      <mat-icon>remove</mat-icon>
+    </button>
+
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Nom du champ</mat-label>
+      <input matInput placeholder="" [ngModel]="field.title">
+      <mat-hint *ngIf="i == 0" align="end">Exemple: Nb. de km parcouru</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Unité du champ</mat-label>
+      <input matInput placeholder="" [ngModel]="field.unit">
+      <mat-hint *ngIf="i == 0" align="end">Exemple: km</mat-hint>
+    </mat-form-field>
+
+  </div>
+
+  <div class="example-button-container">
+    <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="addField()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="save-button">
+    <button mat-raised-button color="accent" (click)="save()">Sauvegarder</button>
+  </div>
+
+</div>
+
+
+

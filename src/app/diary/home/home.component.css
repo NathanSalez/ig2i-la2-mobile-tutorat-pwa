@@ -1,0 +1,16 @@
+.example-container {
+  width: 100vh;
+  height: 100vh;
+}
+
+.example-sidenav {
+  padding: 20px;
+  height: 80vh;
+}
+.example-sidenav-content {
+  /* haut | droit | bas | gauche */
+  margin: 7% 0 0 10%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

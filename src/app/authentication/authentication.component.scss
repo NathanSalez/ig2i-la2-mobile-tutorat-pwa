@@ -1,0 +1,47 @@
+.example-container .mat-form-field + .mat-form-field {
+  width: 20em;
+}
+
+.example-right-align {
+  text-align: left;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+.input mat-form-field {
+  width: 20em;
+}
+
+.error {
+  color:#f44336;;
+}
+
+.loginContainer{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  color: #fff;
+}
+
+#loginForm{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-button{
+  background: #1c1c1e;
+}
+
+.mat-button:hover{
+  background: #1c1c1e;
+}

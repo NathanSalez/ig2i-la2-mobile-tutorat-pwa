@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <span>Diary</span>
+  <span class="example-spacer"></span>
+  <button  (click)="disconnect()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="example-button-container">
+  <button routerLink="/diary/edit" mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon">
+    <mat-icon>plus_one</mat-icon>
+  </button>
+</div>
+<mat-list *ngFor="let diary of diaries">
+  <mat-card routerLink="/diary/{{diary.id}}">
+    {{ diary.title }}
+  </mat-card>
+</mat-list>
