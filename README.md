@@ -1,6 +1,4 @@
 # PersonalDiary
 
-Install (use Node 16.0.2 and NPM 7.7.6) :
-```bash
-npm install
+Cette branche est la branche solution, allez jeter un coup d'oeil à la branche start avant de parcourir la solution !
 ```
